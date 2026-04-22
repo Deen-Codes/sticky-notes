@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sticky Notes - {{ page_title }}
+{% endblock %}
+
+{% block content %}
+
+    <!-- Page heading -->
+    <h2>{{ page_title }}</h2>
+
+    <!-- Link to create a new note -->
+    <a href="{% url 'note_create' %}">Add Note</a>
+
+    <!-- List of all notes -->
+    <ul>
+        {% for note in notes %}
+            <li>
+                <!-- Link to note detail page -->
+                <a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a>
+
+                <!-- Note content preview -->
+                <p>{{ note.content }}</p>
+            </li>
+
+        {% empty %}
+            <!-- Display message if no notes exist -->
+            <li>No notes available.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

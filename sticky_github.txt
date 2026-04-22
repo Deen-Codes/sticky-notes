@@ -1,0 +1,12 @@
+GitHub Repository for Sticky Notes Application
+==============================================
+
+Author : Deen Ali
+Course : Introduction to Software Engineering
+Module : M06T05 - Django - Sticky Notes Application Part 2
+
+Repository URL:
+https://github.com/<your-github-username>/sticky-notes
+
+(Replace <your-github-username> with your actual GitHub username
+after pushing this project to a public repository.)

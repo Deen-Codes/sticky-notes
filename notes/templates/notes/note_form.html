@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Form heading depending on create or edit -->
+    <h2>
+        {% if form.instance.pk %}
+            Edit Note
+        {% else %}
+            Create Note
+        {% endif %}
+    </h2>
+
+    <!-- Form for creating/updating notes -->
+    <form method="post">
+        {% csrf_token %} <!-- Security token for POST requests -->
+
+        {{ form.as_p }} <!-- Django form fields -->
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Navigation back to list -->
+    <a href="{% url 'note_list' %}">Back to Note List</a>
+
+{% endblock %}
